@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers;
+// use App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 // use Illuminate
 
@@ -18,11 +18,12 @@ Route::get('/', function () {
     
     // DB::insert('insert into users (id, name, email, password)
     //             values(?,?,?,?)',[2, 'tavip', 'cocbrainx@gmail.com', bcrypt('123456')]);
-    // return view('hello');
+    return view('welcome');
 });
 
-Route::get('/user',[UserController::class, 'index']);
+Route::get('/user',[App\Http\Controllers\UserController::class, 'index']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/test', [App\Http\Controllers\TestController::class, 'index']) ;
